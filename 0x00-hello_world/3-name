@@ -1,0 +1,4 @@
+#!/bin/bash
+# Write a script that compiles a C file and creates an executable named cisfun.
+# The C file name will be stored in the variable $CFILE
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -o cisfun $CFILE

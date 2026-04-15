@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Write a script that generates the assembly code (Intel syntax) of a C code and saves it to an output file.
+
+#gcc -S -masm=intel $CFILE -o ${$CFILE//’.c'/.s}
+
+
+
+#!/bin/bash
+# Check if CFILE is set
+if [ -z "$CFILE" ]; then
+    echo "Error: CFILE environment variable not set."
+    exit 1
+fi
+
+# Generate assembly code in Intel syntax
+# -S: Compile only, do not assemble or link
+# -masm=intel: Use Intel syntax instead of AT&T
+# ${CFILE%.*}.s: Replaces .c extension with .s
+gcc -S -masm=intel "$CFILE" -o "${CFILE%.*}.s"
